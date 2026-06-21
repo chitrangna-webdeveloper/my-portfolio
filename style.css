@@ -820,3 +820,94 @@ header{
         font-size:2rem;
     }
 }
+.project-card::before,
+.help-container::before,
+.help-container::after{
+    display:none;
+}
+/* FOOTER */
+
+.footer{
+    margin-top:80px;
+    padding:50px 20px;
+    background:#efede8;
+    text-align:center;
+}
+
+.footer h3{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.footer p{
+    color:#555;
+}
+
+.footer-socials{
+    margin:25px 0;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.footer-socials a{
+    width:50px;
+    height:50px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+    text-decoration:none;
+
+    background:white;
+    color:#222;
+
+    transition:.3s;
+}
+
+.footer-socials a:hover{
+    background:#6b972c;
+    color:white;
+    transform:translateY(-4px);
+}
+
+.copyright{
+    margin-top:20px;
+    font-size:.95rem;
+}
+
+/* SCROLL TO TOP */
+
+#topBtn{
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#6b972c;
+    color:white;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:999;
+
+    box-shadow:
+    0 4px 0 #4f741f,
+    0 8px 16px rgba(0,0,0,.12);
+
+    transition:.3s;
+}
+
+#topBtn:hover{
+    transform:translateY(-3px);
+}
