@@ -1,288 +1,913 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-<body>
-    <header>
-        <ul class="header-ul">
-            <div class="links">
-                <li>
-                    <a class="header-a" href="index.html">
-                        <img class="logo" src="logo.png">
-                    </a>
-                </li>
-                <li>
-                    <a class="header-a" href="index.html">Home</a>
-                </li>
-                <li>
-                    <a class="header-a" href="#about">about</a>
-                </li>
-                <li>
-                    <a class="header-a" href="#contact">contact</a>
-                </li>
-                <li>
-                    <a class="header-a" href="#help">help</a>
-                </li>
-            </div>
-            <div class="buttons">
-                <button class="resume">
-                    <a class="button-a">
-                        Download Resume
-                    </a>
-                </button>
-                <button class="contact-button">
-                    <a class="button-a">
-                        Contact-me
-                    </a>
-                </button>
-            </div>
-        </ul>
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:80px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+
+}
+body{
+    background-color:#f8f7f2;
+    background-image:radial-gradient(rgba(0,0,0,0.08) 1px,transparent 1px);
+    background-size:20px 20px;
+}
+body:hover{
+    background-image:radial-gradient(rgba(107,151,44,0.18) 1px, transparent 1px);
+}
+header{  
+    
+}
+.header-ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+.links{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    list-style-type: none;
+}
+.logo{
+    border-radius: 50%;
+    max-width:40px;
+    max-height:40px;
+}
+.header-a{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color:#5c5c5c;
+    font-weight:500;
+    transition:color .25s ease,transform .25s ease;
+}
+.header-a:hover{
+    color:#111;
+    transform:translateY(-1px);
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+.resume {
+  padding: 14px 28px;
+  border: 2px solid #2a2a2a;
+  border-radius: 14px;
+  background: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #2a2a2a;
+  transition:transform 0.25s cubic-bezier(.22,1,.36,1), box-shadow 0.25s cubic-bezier(.22,1,.36,1);
+}
+
+.resume:hover {
+  transform: translate(-2px,-2px);
+  box-shadow: 4px 4px 0 #2a2a2a;
+}
+
+.resume:active {
+  transform: translate(4px,4px);
+  box-shadow: 0px 0px 0 #2a2a2a;
+}
+
+.contact-button{
+    padding:14px 26px;
+    border:none;
+    border-radius:14px;
+    background:#6b972c;
+    color:white;
+    font-size:16px;
+    font-weight:500;
+    cursor:pointer;
+    box-shadow:0 4px 0 #4f741f,0 8px 16px rgba(0,0,0,.12);
+    transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s cubic-bezier(.22,1,.36,1);
+}
+
+.contact-button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 0 #4f741f,0 14px 22px rgba(0,0,0,.16);
+}
+.contact-button:active{
+    transform:translateY(4px);
+    box-shadow:0 0 0 #4f741f,0 4px 8px rgba(0,0,0,.12);
+}
+
+/*media-query-ofheaderul and buttons */
+@media (max-width: 768px){
+
+    .header-ul{
+        flex-direction:column;
+        gap:20px;
+        align-items:center;
+        padding:1rem;
         
-    </header> <!--header-end-here-->
-    <section class="main">
-        <div class="main-2">
-            <div class="badge">
-                Hello! I am Chitrangna
-            </div>
-            <h1 class="main-h1">
-                Building beautiful and impactful web experiences.
-            </h1>
-            <p class="main-p">
-                Frontend Developer & Future Startup Founder.
-            </p>
-            <div class="social-icons">
-               <a href="#">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-            </div>
-        </div><!--main-2-end-here-->
-        <div class="my-image">
-            <img class="img" src="my-image.PNG" alt="Profile">
-            <div class="circle">
-                       
-            </div>
-        </div>
-    </section><!--main end-here-->
-    <section id="about">
-        <div class="aside1">
-            <img class="my-img2" src="my-image.PNG">
-        </div>
-        <div class="aside2">
-            <h2>About Me</h2>
-            <p class="text">
-                Hi, I'm Chitrangna — an aspiring Frontend Developer,
-                future B.Tech student, and passionate learner. I love
-                building clean, responsive, and user-friendly web 
-                experiences while continuously improving my skills
-                in modern web development. My goal is to combine
-                technology, creativity, and entrepreneurship
-                to build products that make a meaningful impact.
-            </p>
-            <button class="resume2">
-                Download Resume
-            </button>
-
-        </div>
-
-    </section>
-
-    <section class="projects" id="projects">
-
-    <div class="projects-header">
-        <span class="project-tag">My Work 🚀</span>
-        <h2>Featured Projects</h2>
-    </div>
-
-    <div class="project-grid">
-
-        <div class="project-card">
-            <h3>Portfolio Website</h3>
-            <p>
-                A modern responsive portfolio built using HTML, CSS and JavaScript.
-            </p>
-            <button class="project-btn">View Project</button>
-        </div>
-
-        <div class="project-card">
-            <h3>ABESIT Assistant Bot</h3>
-            <p>
-                A smart college assistant bot developed using Python.
-            </p>
-            <button class="project-btn">View Project</button>
-        </div>
-
-        <div class="project-card">
-            <h3>Calculator App</h3>
-            <p>
-                Interactive calculator with clean UI and JavaScript logic.
-            </p>
-            <button class="project-btn">View Project</button>
-        </div>
-
-    </div>
-
-</section>
-
-<!--section of contact-->        
-<section class="contact" id="contact">
-    <div class="contact-container">
-
-        <div class="contact-left">
-            <span class="contact-tag">Let's Connect ✨</span>
-
-            <h2>Get In Touch</h2>
-
-            <p>
-                Have a project in mind, want to collaborate,
-                or just say hello? Feel free to reach out.
-                I would love to hear from you.
-            </p>
-
-            <div class="contact-info">
-                <div>
-                    <h4>Email</h4>
-                    <p>chitrangnao901@gmail.com</p>
-                </div>
-
-                <div>
-                    <h4>Location</h4>
-                    <p>India</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="contact-right">
-            <form>
-                <input type="text" placeholder="Your Name" required>
-
-                <input type="email" placeholder="Your Email" required>
-
-                <input type="text" placeholder="Subject">
-
-                <textarea rows="5" placeholder="Your Message"></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-
-    </div>
-</section>
-
-<section class="help-section" id="help">
-
-    <div class="help-container">
-
-        <span class="help-tag">Need Help? 🌱</span>
-
-        <h2>Frequently Asked Questions</h2>
-
-        <div class="faq">
-
-            <details>
-                <summary>What technologies do you work with?</summary>
-                <p>HTML, CSS, JavaScript, Python and modern web technologies.</p>
-            </details>
-
-            <details>
-                <summary>Are you available for freelance projects?</summary>
-                <p>Yes, I am open to freelance projects and collaborations.</p>
-            </details>
-
-            <details>
-                <summary>How can I contact you?</summary>
-                <p>You can use the contact form or connect through LinkedIn and GitHub.</p>
-            </details>
-
-            <details>
-                <summary>Do you build responsive websites?</summary>
-                <p>Yes, all my projects are designed to work smoothly on mobile, tablet and desktop devices.</p>
-            </details>
-
-        </div>
-
-    </div>
-
-</section>
-<footer class="footer">
-
-    <div class="footer-content">
-
-        <h3>Chitrangna</h3>
-
-        <p>
-            Frontend Developer • Future Startup Founder • Lifelong Learner
-        </p>
-
-        <div class="footer-socials">
-
-            <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">
-                <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-
-            <a href="https://github.com/YOUR-GITHUB" target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
-
-            <a href="mailto:youremail@gmail.com">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-
-        </div>
-
-        <p class="copyright">
-            © 2026 Chitrangna. All Rights Reserved.
-        </p>
-
-    </div>
-
-</footer>
-
-<!-- Scroll To Top Button -->
-
-<button id="topBtn">
-    <i class="fa-solid fa-arrow-up"></i>
-</button>
-<script>
-
-const topBtn = document.getElementById("topBtn");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 300){
-        topBtn.style.display = "block";
-    }
-    else{
-        topBtn.style.display = "none";
     }
 
-});
+    .links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:1rem;
+    }
+    .header-a{
+        font-size:15px;
+    }
 
-topBtn.addEventListener("click", () => {
+    .buttons{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+    .resume,
+    .contact-button{
+        padding:12px 20px;
+        font-size:14px;
+    }
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+}/*end here for buttons links and ul */
+/*media query for header end here*/
+.main{
+    position: relative;
+    overflow: hidden;
+    max-width:1200px;
+    margin:auto;
+    padding:60px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+    background:rgba(255, 255, 255, 0);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:30px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.05);
 
-});
+}
 
-</script>
+.main-2{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+.badge{
+    display:inline-flex;
+    padding:10px 20px;
+    border-radius:50px;
+    background:#dff3a7;
+    color:#5f8d22;
+    font-size: 1.4rem;
+    margin-bottom:20px;
+}
+
+.main-h1{
+    font-size:clamp(2rem,5vw,5rem);
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.main-p{
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #8BAF3A;
+    animation:typing 4s steps(35,end) infinite, blink .8s infinite;;
+    font-size:clamp(1rem,2vw,1.2rem);
+}
+@keyframes typing{
+    0%{
+        width:0;
+    }
+
+    40%{
+        width:100%;
+    }
+
+    60%{
+        width:100%;
+    }
+
+    100%{
+        width:0;
+    }
+}
+
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+.social-icons a{
+    width:50px;
+    height:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    color:#222;
+    background:rgba(255,255,255,0.6);
+    border:1px solid rgba(0,0,0,0.1);
+    border-radius:50%;
+    backdrop-filter:blur(10px);
+    transition:0.3s ease;
+}
+
+.social-icons a:hover{
+    transform:translateY(-5px);
+    background:#8BAF3A;
+    color:white;
+}
+
+.my-image{
+    flex:1;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.img{
+    position:relative;
+    width: 100%;
+    max-width:450px;
+    height:auto;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.circle{
+    position:absolute;
+    width: 100%;
+    max-width:520px;
+    height: 100%;
+    max-height:500px;
+    border:3px dashed #7fa53d;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:14px;
+    font-weight:600;
+    color:#7fa53d;
+    transform:rotate(-12deg);
+}
+.circle{
+    animation:rotate 20s linear infinite;
+}
+
+@keyframes rotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@media (max-width:768px){
+
+    .main{
+        flex-direction:column;
+        text-align:center;
+        padding:40px 20px;
+    }
+    .main-2{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+    .badge{
+        margin:auto;
+    }
+    .main-2 h1{
+        font-size:3rem;
+        line-height:1.1;
+    }
+
+    .main-2 img{
+        width:280px;
+        height:280px;
+        object-fit:cover;
+    }
+    .social-icons{
+        justify-content:center;
+    }
+
+    .my-image{
+        order:-1; /* image upar aa jayegi */
+    }
+    
 
     
+
     
-</body>
-</html>
+}
+/*section of about-start-here*/
+#about{
+    display:flex;
+    align-items:stretch;
+    gap:20px;
+    max-width:1200px;
+    margin:80px auto;
+    padding:0 20px;
+}
+.aside1{
+     flex:0 0 280px;
+    background:#fff;
+    border-radius:25px;
+    padding:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.my-img2{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:20px;
+    display:block;
+    
+}
+.aside2{ 
+    flex:1;
+    background:#f7f5ef;
+    border-radius:25px;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.aside2 h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.text{
+    font-size:1.1rem;
+    line-height:1.9;
+    color:#555;
+
+    max-width:750px;
+}
+.resume2 {
+    align-self:flex-start;
+  padding: 14px;
+  border: 2px solid #2a2a2a;
+  border-radius: 14px;
+  background: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #2a2a2a;
+  transition:transform 0.25s cubic-bezier(.22,1,.36,1), box-shadow 0.25s cubic-bezier(.22,1,.36,1);
+}
+
+.resume2:hover {
+  transform: translate(-2px,-2px);
+  box-shadow: 4px 4px 0 #2a2a2a;
+}
+.resume2:active {
+  transform: translate(4px,4px);
+  box-shadow: 0px 0px 0 #2a2a2a;
+}
+
+
+@media(max-width:768px){
+
+    #about{
+        flex-direction:column;
+        padding:0 15px;
+    }
+
+    .aside1{
+        flex:auto;
+    }
+
+    .my-img2{
+        max-height:350px;
+    }
+
+    .aside2{
+        padding:30px 25px;
+    }
+
+    .aside2 h2{
+        font-size:2rem;
+    }
+
+    .text{
+        font-size:1rem;
+    }
+
+    
+}
+.projects{
+    padding:80px 20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.projects-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.project-tag{
+    display:inline-block;
+    background:#dff3a7;
+    color:#5f8d22;
+    padding:10px 22px;
+    border-radius:50px;
+    margin-bottom:15px;
+}
+
+.projects-header h2{
+    font-size:3rem;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.project-card{
+    background:#efede8;
+    border-radius:25px;
+    padding:30px;
+    position:relative;
+    overflow:hidden;
+    transition:0.4s ease;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.project-card::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:radial-gradient(
+        rgba(107,151,44,.25),
+        transparent 70%
+    );
+
+    top:-70px;
+    right:-70px;
+
+    animation:floatGlow 6s ease-in-out infinite;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+}
+
+.project-card h3{
+    font-size:1.5rem;
+    margin-bottom:15px;
+}
+
+.project-card p{
+    color:#555;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.project-btn{
+    padding:14px 26px;
+    border:none;
+    border-radius:14px;
+    background:#6b972c;
+    color:white;
+    font-size:16px;
+    font-weight:500;
+    cursor:pointer;
+
+    box-shadow:
+    0 4px 0 #4f741f,
+    0 8px 16px rgba(0,0,0,.12);
+
+    transition:
+    transform .25s cubic-bezier(.22,1,.36,1),
+    box-shadow .25s cubic-bezier(.22,1,.36,1);
+}
+
+.project-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 6px 0 #4f741f,
+    0 14px 22px rgba(0,0,0,.16);
+}
+
+.project-btn:active{
+    transform:translateY(4px);
+
+    box-shadow:
+    0 0 0 #4f741f,
+    0 4px 8px rgba(0,0,0,.12);
+}
+
+@keyframes floatGlow{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(15px);
+    }
+}
+
+.contact{
+    padding:80px 8%;
+    background:transparent;
+
+}
+
+.contact-container{
+    background:#efede8;
+    border-radius:35px;
+    padding:60px;
+    display:flex;
+    gap:60px;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.contact-left{
+    flex:1;
+}
+
+.contact-tag{
+    display:inline-block;
+    background:#d8eb9d;
+    color:#56731b;
+    padding:12px 28px;
+    border-radius:30px;
+    font-size:1rem;
+    margin-bottom:20px;
+}
+
+.contact-left h2{
+    font-size:3rem;
+    margin-bottom:20px;
+    color:#111;
+}
+
+.contact-left p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.contact-info{
+    display:flex;
+    gap:40px;
+}
+
+.contact-info h4{
+    margin-bottom:8px;
+    color:#6f8f2a;
+}
+
+.contact-right{
+    flex:1;
+}
+
+.contact-right form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.contact-right input,
+.contact-right textarea{
+    padding:18px;
+    border:none;
+    border-radius:15px;
+    background:white;
+    font-size:1rem;
+    outline:none;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus{
+    border:2px solid #8aaa32;
+}
+
+/* SEND MESSAGE BUTTON */
+.contact-right button{
+    width:200px;
+    padding:14px 26px;
+    border:none;
+    border-radius:14px;
+    background:#6b972c;
+    color:white;
+    font-size:16px;
+    font-weight:500;
+    cursor:pointer;
+
+    box-shadow:
+    0 4px 0 #4f741f,
+    0 8px 16px rgba(0,0,0,.12);
+
+    transition:
+    transform .25s cubic-bezier(.22,1,.36,1),
+    box-shadow .25s cubic-bezier(.22,1,.36,1);
+}
+
+.contact-right button:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 6px 0 #4f741f,
+    0 14px 22px rgba(0,0,0,.16);
+}
+
+.contact-right button:active{
+    transform:translateY(4px);
+
+    box-shadow:
+    0 0 0 #4f741f,
+    0 4px 8px rgba(0,0,0,.12);
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .contact-container{
+        flex-direction:column;
+        padding:40px 25px;
+    }
+
+    .contact-left h2{
+        font-size:2.2rem;
+    }
+
+    .contact-info{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .contact-right button{
+        width:100%;
+    }
+}
+.help-section{
+    padding:80px 8%;
+}
+
+.help-container{
+    position:relative;
+    overflow:hidden;
+    max-width:1200px;
+    margin:auto;
+    background:#efede8;
+    padding:60px;
+    border-radius:35px;
+    box-shadow:0 8px 32px rgba(0,0,0,.05);
+}
+.help-container::before{
+    content:"";
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    background:radial-gradient(
+        circle,
+        rgba(107,151,44,0.25),
+        transparent 70%
+    );
+
+    top:-120px;
+    left:-120px;
+
+    animation:floatGlow 8s ease-in-out infinite;
+}
+
+.help-container::after{
+    content:"";
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    background:radial-gradient(
+        circle,
+        rgba(139,175,58,0.18),
+        transparent 70%
+    );
+
+    bottom:-100px;
+    right:-100px;
+
+    animation:floatGlow2 10s ease-in-out infinite;
+}
+@keyframes floatGlow{
+
+    0%,100%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(40px,30px);
+    }
+}
+
+@keyframes floatGlow2{
+
+    0%,100%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(-35px,-25px);
+    }
+}
+
+.help-tag{
+    display:inline-block;
+    background:#d8eb9d;
+    color:#56731b;
+    padding:12px 28px;
+    border-radius:30px;
+    margin-bottom:20px;
+}
+
+.help-container h2{
+    font-size:3rem;
+    margin-bottom:30px;
+
+    background:linear-gradient(
+        90deg,
+        #56731b,
+        #8BAF3A,
+        #56731b
+    );
+
+    background-size:200% auto;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:shine 5s linear infinite;
+}
+
+@keyframes shine{
+    to{
+        background-position:200% center;
+    }
+}
+
+.faq{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.faq details{
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.faq details:hover{
+    transform:translateY(-2px);
+}
+
+.faq summary{
+    font-size:1.1rem;
+    font-weight:600;
+    color:#333;
+    list-style:none;
+}
+.faq details{
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    cursor:pointer;
+    transition:.35s ease;
+    border:1px solid transparent;
+}
+
+.faq details:hover{
+    transform:translateY(-4px);
+    border-color:#8BAF3A;
+
+    box-shadow:
+    0 10px 25px rgba(107,151,44,.12);
+}
+
+.faq summary::-webkit-details-marker{
+    display:none;
+}
+
+.faq p{
+    margin-top:15px;
+    color:#666;
+    line-height:1.7;
+}
+
+@media(max-width:768px){
+
+    .help-container{
+        padding:35px 25px;
+    }
+
+    .help-container h2{
+        font-size:2rem;
+    }
+}
+.project-card::before,
+.help-container::before,
+.help-container::after{
+    display:none;
+}
+/* FOOTER */
+
+.footer{
+    margin-top:80px;
+    padding:50px 20px;
+    background:#efede8;
+    text-align:center;
+}
+
+.footer h3{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.footer p{
+    color:#555;
+}
+
+.footer-socials{
+    margin:25px 0;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.footer-socials a{
+    width:50px;
+    height:50px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+    text-decoration:none;
+
+    background:white;
+    color:#222;
+
+    transition:.3s;
+}
+
+.footer-socials a:hover{
+    background:#6b972c;
+    color:white;
+    transform:translateY(-4px);
+}
+
+.copyright{
+    margin-top:20px;
+    font-size:.95rem;
+}
+
+/* SCROLL TO TOP */
+
+#topBtn{
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#6b972c;
+    color:white;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:999;
+
+    box-shadow:
+    0 4px 0 #4f741f,
+    0 8px 16px rgba(0,0,0,.12);
+
+    transition:.3s;
+}
+
+#topBtn:hover{
+    transform:translateY(-3px);
+}
