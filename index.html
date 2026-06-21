@@ -217,7 +217,70 @@
     </div>
 
 </section>
+<footer class="footer">
 
+    <div class="footer-content">
+
+        <h3>Chitrangna</h3>
+
+        <p>
+            Frontend Developer • Future Startup Founder • Lifelong Learner
+        </p>
+
+        <div class="footer-socials">
+
+            <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://github.com/YOUR-GITHUB" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="mailto:youremail@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Chitrangna. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- Scroll To Top Button -->
+
+<button id="topBtn">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+<script>
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 300){
+        topBtn.style.display = "block";
+    }
+    else{
+        topBtn.style.display = "none";
+    }
+
+});
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+</script>
 
     
     
