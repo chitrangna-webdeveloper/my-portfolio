@@ -9,6 +9,118 @@ html{
     box-sizing: border-box;
 
 }
+
+/* ===== PRELOADER (tree growth animation) ===== */
+body.loading{
+    overflow: hidden;
+}
+
+.preloader{
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    overflow: hidden;
+    background: #f8f7f2;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.preloader.hide{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ambient glow blobs taaki sides khaali na lage, same style jaise help-container mein hai */
+.preloader::before{
+    content:"";
+    position:absolute;
+    width:340px;
+    height:340px;
+    background:radial-gradient(circle, rgba(107,151,44,0.22), transparent 70%);
+    top:-100px;
+    left:-100px;
+    animation: floatGlow 8s ease-in-out infinite;
+}
+
+.preloader::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:radial-gradient(circle, rgba(139,175,58,0.18), transparent 70%);
+    bottom:-90px;
+    right:-90px;
+    animation: floatGlow2 9s ease-in-out infinite;
+}
+
+.tree-svg{
+    width: 220px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.trunk,
+.branch{
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    animation: draw 1s ease forwards;
+}
+
+.trunk{ animation-delay: 0s; }
+.branch1{ animation-delay: 1s; }
+.branch2{ animation-delay: 1s; }
+.branch3{ animation-delay: 1.6s; }
+.branch4{ animation-delay: 1.6s; }
+.branch5{ animation-delay: 1.6s; }
+
+@keyframes draw{
+    to{ stroke-dashoffset: 0; }
+}
+
+.leaf{
+    transform-origin: center;
+    transform: scale(0);
+    animation: pop 0.6s ease forwards;
+}
+.leaf1{ animation-delay: 2.2s; }
+.leaf2{ animation-delay: 2.2s; }
+.leaf3{ animation-delay: 2.6s; }
+.leaf4{ animation-delay: 2.6s; }
+.leaf5{ animation-delay: 3.0s; }
+
+@keyframes pop{
+    0%{ transform: scale(0); }
+    70%{ transform: scale(1.15); }
+    100%{ transform: scale(1); }
+}
+
+.preloader-text{
+    position: relative;
+    z-index: 1;
+    font-size: 1.05rem;
+    color: #5f8d22;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.dots{
+    animation: blinkDots 1.2s infinite steps(1);
+}
+
+@keyframes blinkDots{
+    0%, 20%{ opacity: 0; }
+    50%{ opacity: 1; }
+    100%{ opacity: 0; }
+}
+/* ===== PRELOADER END ===== */
+
+
 body{
     background-color:#f8f7f2;
     background-image:radial-gradient(rgba(0,0,0,0.08) 1px,transparent 1px);
@@ -50,6 +162,16 @@ header{
 .buttons{
     display: flex;
     gap: 10px;
+}
+
+/* Desktop: nav-links-mobile ek invisible wrapper hai, andar ke li's .links ke seedhe flex-children ban jaate hain */
+.nav-links-mobile{
+    display: contents;
+}
+
+/* Desktop: right-side toggle icon chhupa rahega */
+.menu-toggle{
+    display: none;
 }
 .resume {
   padding: 14px 28px;
@@ -97,30 +219,120 @@ header{
 /*media-query-ofheaderul and buttons */
 @media (max-width: 768px){
 
-    .header-ul{
-        flex-direction:column;
-        gap:20px;
-        align-items:center;
-        padding:1rem;
-        
+    /* NEW: header becomes a floating glass bar on mobile */
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        z-index: 1000;
     }
 
+    /* NEW: sirf ek row ki height chahiye ab, dropdowns overlay hote hain */
+    body{
+        padding-top: 90px;
+    }
+
+    /* NEW: ye hi glass navbar bar hai — logo (left) aur menu-toggle (right) isme rehte hai */
+    .header-ul{
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+
+        margin: 14px auto;
+        width: 92%;
+        max-width: 420px;
+        padding: 0.7rem 1.2rem;
+
+        background: rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 24px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* .links ab sirf logo dikhata hai, baaki links dropdown mein chale gaye */
     .links{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:1rem;
+        display: flex;
+        align-items: center;
+    }
+
+    /* NEW: logo tap karne se ye dropdown khulta hai (Home, about, contact, help) */
+    .nav-links-mobile{
+        display: none;
+        flex-direction: column;
+        gap: 14px;
+        list-style: none;
+
+        position: absolute;
+        top: 115%;
+        left: 0;
+        width: 100%;
+
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        text-align: center;
+    }
+    .nav-links-mobile.show{
+        display: flex;
     }
     .header-a{
         font-size:15px;
     }
 
+    /* NEW: right-side toggle icon jo buttons dropdown ko open/close karega */
+    .menu-toggle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+
+        border: 1px solid rgba(255,255,255,0.5);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.45);
+
+        font-size: 16px;
+        color: #333;
+        cursor: pointer;
+    }
+
+    /* NEW: Resume + Contact-me ab dropdown ke andar, right-toggle se open hota hai */
     .buttons{
-        width:100%;
-        justify-content:center;
-        flex-wrap:wrap;
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+
+        position: absolute;
+        top: 115%;
+        right: 0;
+        width: 75%;
+        max-width: 260px;
+
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 18px;
+        padding: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+    .buttons.show{
+        display: flex;
     }
     .resume,
     .contact-button{
+        width: 100%;
         padding:12px 20px;
         font-size:14px;
     }
@@ -652,11 +864,11 @@ header{
         width:100%;
     }
 }
-.help-section{
+.skills-section{
     padding:80px 8%;
 }
 
-.help-container{
+.skills-container{
     position:relative;
     overflow:hidden;
     max-width:1200px;
@@ -665,8 +877,9 @@ header{
     padding:60px;
     border-radius:35px;
     box-shadow:0 8px 32px rgba(0,0,0,.05);
+    text-align:center;
 }
-.help-container::before{
+.skills-container::before{
     content:"";
     position:absolute;
 
@@ -685,7 +898,7 @@ header{
     animation:floatGlow 8s ease-in-out infinite;
 }
 
-.help-container::after{
+.skills-container::after{
     content:"";
     position:absolute;
 
@@ -725,7 +938,7 @@ header{
     }
 }
 
-.help-tag{
+.skills-tag{
     display:inline-block;
     background:#d8eb9d;
     color:#56731b;
@@ -734,9 +947,9 @@ header{
     margin-bottom:20px;
 }
 
-.help-container h2{
+.skills-container h2{
     font-size:3rem;
-    margin-bottom:30px;
+    margin-bottom:40px;
 
     background:linear-gradient(
         90deg,
@@ -759,70 +972,72 @@ header{
     }
 }
 
-.faq{
+.skills-grid{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:20px;
+}
+
+.skill-card{
+    background:#6b972c;
+    border-radius:14px;
+    padding:28px 16px;
     display:flex;
     flex-direction:column;
-    gap:18px;
-}
-
-.faq details{
-    background:white;
-    border-radius:18px;
-    padding:20px;
+    align-items:center;
+    gap:12px;
     cursor:pointer;
-    transition:.3s;
+
+    border:none;
+    box-shadow:0 4px 0 #4f741f, 0 8px 16px rgba(0,0,0,.12);
+    transition:transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s cubic-bezier(.22,1,.36,1);
 }
 
-.faq details:hover{
-    transform:translateY(-2px);
+.skill-card i{
+    font-size:2.4rem;
+    color:white;
 }
 
-.faq summary{
-    font-size:1.1rem;
+.skill-card h4{
+    font-size:1rem;
+    color:white;
     font-weight:600;
-    color:#333;
-    list-style:none;
-}
-.faq details{
-    background:white;
-    border-radius:18px;
-    padding:20px;
-    cursor:pointer;
-    transition:.35s ease;
-    border:1px solid transparent;
 }
 
-.faq details:hover{
-    transform:translateY(-4px);
-    border-color:#8BAF3A;
-
-    box-shadow:
-    0 10px 25px rgba(107,151,44,.12);
+.skill-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 0 #4f741f, 0 14px 22px rgba(0,0,0,.16);
 }
 
-.faq summary::-webkit-details-marker{
-    display:none;
-}
-
-.faq p{
-    margin-top:15px;
-    color:#666;
-    line-height:1.7;
+.skill-card:active{
+    transform:translateY(4px);
+    box-shadow:0 0 0 #4f741f, 0 4px 8px rgba(0,0,0,.12);
 }
 
 @media(max-width:768px){
 
-    .help-container{
+    .skills-container{
         padding:35px 25px;
     }
 
-    .help-container h2{
+    .skills-container h2{
+        font-size:2rem;
+    }
+
+    .skills-grid{
+        grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+        gap:14px;
+    }
+
+    .skill-card i{
         font-size:2rem;
     }
 }
 .project-card::before,
-.help-container::before,
-.help-container::after{
+.skills-container::before,
+.skills-container::after{
     display:none;
 }
 /* FOOTER */
