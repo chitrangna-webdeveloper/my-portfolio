@@ -7,29 +7,50 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body>
+<body class="loading">
+    <div class="preloader" id="preloader">
+        <svg class="tree-svg" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+            <path class="trunk" d="M100 230 L100 120" stroke="#6b4423" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+            <path class="branch branch1" d="M100 170 L70 130" stroke="#6b4423" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <path class="branch branch2" d="M100 170 L130 130" stroke="#6b4423" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <path class="branch branch3" d="M100 140 L75 100" stroke="#6b4423" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <path class="branch branch4" d="M100 140 L125 100" stroke="#6b4423" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <path class="branch branch5" d="M100 120 L100 85" stroke="#6b4423" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+            <circle class="leaf leaf1" cx="70" cy="125" r="18" fill="#8BAF3A"/>
+            <circle class="leaf leaf2" cx="130" cy="125" r="18" fill="#7fa53d"/>
+            <circle class="leaf leaf3" cx="75" cy="95" r="16" fill="#6b972c"/>
+            <circle class="leaf leaf4" cx="125" cy="95" r="16" fill="#8BAF3A"/>
+            <circle class="leaf leaf5" cx="100" cy="80" r="20" fill="#56731b"/>
+        </svg>
+        <p class="preloader-text">Growing something big<span class="dots">...</span></p>
+    </div>
+
     <header>
         <ul class="header-ul">
             <div class="links">
                 <li>
-                    <a class="header-a" href="index.html">
+                    <a class="header-a" href="index.html" id="logoLink">
                         <img class="logo" src="logo.png">
                     </a>
                 </li>
-                <li>
-                    <a class="header-a" href="index.html">Home</a>
-                </li>
-                <li>
-                    <a class="header-a" href="#about">about</a>
-                </li>
-                <li>
-                    <a class="header-a" href="#contact">contact</a>
-                </li>
-                <li>
-                    <a class="header-a" href="#help">help</a>
-                </li>
+                <div class="nav-links-mobile" id="navLinksMobile">
+                    <li>
+                        <a class="header-a" href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="header-a" href="#about">about</a>
+                    </li>
+                    <li>
+                        <a class="header-a" href="#contact">contact</a>
+                    </li>
+                    <li>
+                        <a class="header-a" href="#skills">skills</a>
+                    </li>
+                </div>
             </div>
-            <div class="buttons">
+            <div class="buttons" id="buttonsMenu">
                 <button class="resume">
                     <a class="button-a">
                         Download Resume
@@ -41,6 +62,9 @@
                     </a>
                 </button>
             </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
         </ul>
         
     </header> <!--header-end-here-->
@@ -103,7 +127,7 @@
     <section class="projects" id="projects">
 
     <div class="projects-header">
-        <span class="project-tag">My Work 🚀</span>
+        <span class="project-tag">My Work</span>
         <h2>Featured Projects</h2>
     </div>
 
@@ -137,12 +161,69 @@
 
 </section>
 
-<!--section of contact-->        
+<!--section of skills-->
+<section class="skills-section" id="skills">
+
+    <div class="skills-container">
+
+        <span class="skills-tag">My Toolkit</span>
+
+        <h2>Skills & Technologies</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <i class="fa-brands fa-html5"></i>
+                <h4>HTML</h4>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h4>CSS</h4>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-js"></i>
+                <h4>JavaScript</h4>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-react"></i>
+                <h4>React</h4>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-node-js"></i>
+                <h4>Node.js</h4>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-java"></i>
+                <h4>Java</h4>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-git-alt"></i>
+                <h4>Git</h4>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-github"></i>
+                <h4>GitHub</h4>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--section of contact (sabse last, footer se pehle)-->
 <section class="contact" id="contact">
     <div class="contact-container">
 
         <div class="contact-left">
-            <span class="contact-tag">Let's Connect ✨</span>
+            <span class="contact-tag">Let's Connect</span>
 
             <h2>Get In Touch</h2>
 
@@ -182,41 +263,6 @@
     </div>
 </section>
 
-<section class="help-section" id="help">
-
-    <div class="help-container">
-
-        <span class="help-tag">Need Help? 🌱</span>
-
-        <h2>Frequently Asked Questions</h2>
-
-        <div class="faq">
-
-            <details>
-                <summary>What technologies do you work with?</summary>
-                <p>HTML, CSS, JavaScript, Python and modern web technologies.</p>
-            </details>
-
-            <details>
-                <summary>Are you available for freelance projects?</summary>
-                <p>Yes, I am open to freelance projects and collaborations.</p>
-            </details>
-
-            <details>
-                <summary>How can I contact you?</summary>
-                <p>You can use the contact form or connect through LinkedIn and GitHub.</p>
-            </details>
-
-            <details>
-                <summary>Do you build responsive websites?</summary>
-                <p>Yes, all my projects are designed to work smoothly on mobile, tablet and desktop devices.</p>
-            </details>
-
-        </div>
-
-    </div>
-
-</section>
 <footer class="footer">
 
     <div class="footer-content">
@@ -278,6 +324,48 @@ topBtn.addEventListener("click", () => {
         behavior:"smooth"
     });
 
+});
+
+// ---- Preloader: tree growth animation before site reveals ----
+window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    setTimeout(() => {
+        preloader.classList.add("hide");
+        document.body.classList.remove("loading");
+    }, 3600); // naye slow animation ki total duration ke barabar (3.6s)
+});
+
+// ---- Mobile navbar toggle logic ----
+const logoLink = document.getElementById("logoLink");
+const navLinksMobile = document.getElementById("navLinksMobile");
+const menuToggle = document.getElementById("menuToggle");
+const buttonsMenu = document.getElementById("buttonsMenu");
+
+function isMobile(){
+    return window.innerWidth <= 768;
+}
+
+// logo tap -> toggle links dropdown (sirf mobile pe; desktop pe normal home link rahega)
+logoLink.addEventListener("click", (e) => {
+    if(isMobile()){
+        e.preventDefault();
+        navLinksMobile.classList.toggle("show");
+        buttonsMenu.classList.remove("show");
+    }
+});
+
+// right side icon tap -> toggle buttons dropdown
+menuToggle.addEventListener("click", () => {
+    buttonsMenu.classList.toggle("show");
+    navLinksMobile.classList.remove("show");
+});
+
+// bahar tap karne pe dono dropdown band ho jaye
+document.addEventListener("click", (e) => {
+    if(isMobile() && !e.target.closest(".header-ul")){
+        navLinksMobile.classList.remove("show");
+        buttonsMenu.classList.remove("show");
+    }
 });
 
 </script>
