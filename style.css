@@ -432,12 +432,6 @@ header.scrolled{
     margin-bottom:20px;
 }
 
-/* Typing animation lives BELOW the "Building..." heading.
-   BUG FIX: previously the width animated to 100% (the container's
-   full width), so the cursor kept moving past where the visible
-   text actually ended. Now the width animates in "ch" units that
-   exactly match the tagline's character count (44), so typing and
-   erasing both stop precisely at the real end of the text. */
 .main-p{
     display:inline-block;
     overflow:hidden;
@@ -457,7 +451,7 @@ header.scrolled{
         width:0;
     }
     40%{
-        width:44ch; /* exact length of "Frontend Developer & Future Startup Founder." */
+        width:44ch;
     }
     60%{
         width:44ch;
@@ -628,17 +622,12 @@ header.scrolled{
     }
 
     .my-image{
-        order:-1; /* image upar aa jayegi */
+        order:-1;
     }
 
     .main-p{
         margin:0 auto 6px;
     }
-    
-
-    
-
-    
 }
 /*section of about-start-here*/
 #about{
@@ -658,7 +647,6 @@ header.scrolled{
     padding:12px;
     border-radius:25px;
 
-    /* double border: gradient outer ring + crisp inner white ring */
     background:
         linear-gradient(#fff, #fff) padding-box,
         linear-gradient(135deg, #8BAF3A, #56731b) border-box;
@@ -687,7 +675,6 @@ header.scrolled{
     animation:floatGlow 8s ease-in-out infinite;
 }
 
-/* NEW: text badge pill instead of a plain graduation-cap icon circle */
 .aside1-badge{
     position:absolute;
     bottom:-16px;
@@ -722,7 +709,6 @@ header.scrolled{
     transition:transform .5s cubic-bezier(.22,1,.36,1);
 }
 
-/* stronger hover zoom on the photo itself */
 .aside1:hover .my-img2{
     transform:scale(1.09);
 }
@@ -791,7 +777,6 @@ header.scrolled{
     font-size:1rem;
 }
 
-/* NEW: button group — Download Resume + View Projects */
 .about-buttons{
     display:flex;
     flex-wrap:wrap;
@@ -845,7 +830,6 @@ header.scrolled{
     box-shadow:0 0 0 #4f741f, 0 4px 8px rgba(0,0,0,.12);
 }
 
-/* NEW: quick stats row so a recruiter gets the profile at a glance */
 .about-stats{
     display:flex;
     flex-wrap:wrap;
@@ -872,7 +856,6 @@ header.scrolled{
     font-weight:500;
 }
 
-/* scroll-reveal: fades + rises into place once the section enters view */
 [data-reveal]{
     opacity:0;
     transform:translateY(28px);
@@ -979,6 +962,15 @@ header.scrolled{
     font-size:3rem;
 }
 
+/* NEW: short centered blurb under a page's header tag+heading (used on projects.html) */
+.projects-intro{
+    max-width:640px;
+    margin:16px auto 0;
+    color:#555;
+    line-height:1.75;
+    text-align:center;
+}
+
 .project-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -1003,7 +995,6 @@ header.scrolled{
     box-shadow:0 24px 45px rgba(86,115,27,.18), 0 8px 18px rgba(0,0,0,.08);
 }
 
-/* NEW: project screenshot / preview area */
 .project-thumb{
     position:relative;
     width:100%;
@@ -1036,7 +1027,6 @@ header.scrolled{
     transform:scale(1.08);
 }
 
-/* NEW: Featured / Live status badge on the thumbnail */
 .project-badge{
     position:absolute;
     z-index:2;
@@ -1091,7 +1081,6 @@ header.scrolled{
     margin-bottom:18px;
 }
 
-/* NEW: tech stack badges */
 .tech-stack{
     display:flex;
     flex-wrap:wrap;
@@ -1109,7 +1098,6 @@ header.scrolled{
     border:1px solid rgba(107,151,44,.25);
 }
 
-/* NEW: Live Demo + GitHub link pair */
 .project-links{
     display:flex;
     gap:12px;
@@ -1163,7 +1151,6 @@ header.scrolled{
     box-shadow:0 0 0 #2a2a2a;
 }
 
-/* NEW: View All Projects CTA below the grid */
 .view-all-wrap{
     text-align:center;
     margin-top:50px;
@@ -1285,7 +1272,6 @@ header.scrolled{
     border:2px solid #8aaa32;
 }
 
-/* SEND MESSAGE BUTTON */
 .contact-right button{
     width:200px;
     padding:14px 26px;
@@ -1321,8 +1307,6 @@ header.scrolled{
     0 0 0 #4f741f,
     0 4px 8px rgba(0,0,0,.12);
 }
-
-/* Responsive */
 
 @media(max-width:900px){
 
@@ -1604,4 +1588,48 @@ header.scrolled{
 
 #topBtn:hover{
     transform:translateY(-3px);
+}
+
+/* ===== PROJECTS PAGE: page hero (used at top of projects.html) ===== */
+.page-hero{
+    max-width:1200px;
+    margin:60px auto 0;
+    padding:0 20px;
+    text-align:center;
+}
+
+.page-hero .project-tag{
+    margin-bottom:15px;
+}
+
+.page-hero h1{
+    font-size:clamp(2.2rem,5vw,3.4rem);
+    line-height:1.15;
+    margin-bottom:14px;
+}
+
+/* NEW: small filter/category pills above the full grid on projects.html */
+.filter-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin:34px auto 10px;
+}
+
+.filter-pill{
+    padding:9px 18px;
+    border-radius:50px;
+    background:#efede8;
+    color:#4f741f;
+    font-size:.85rem;
+    font-weight:600;
+    border:1px solid rgba(107,151,44,.25);
+    cursor:default;
+}
+
+.filter-pill.is-active{
+    background:#6b972c;
+    color:#fff;
+    border-color:#6b972c;
 }
