@@ -1,1 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects — Chitrangna</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="loading">
+    <div class="preloader" id="preloader">
+        <svg class="tree-svg" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+            <path class="trunk" d="M100 230 L100 120" stroke="#6b4423" stroke-width="8" stroke-linecap="round" fill="none"/>
 
+            <path class="branch branch1" d="M100 170 L70 130" stroke="#6b4423" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <path class="branch branch2" d="M100 170 L130 130" stroke="#6b4423" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <path class="branch branch3" d="M100 140 L75 100" stroke="#6b4423" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <path class="branch branch4" d="M100 140 L125 100" stroke="#6b4423" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <path class="branch branch5" d="M100 120 L100 85" stroke="#6b4423" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+            <circle class="leaf leaf1" cx="70" cy="125" r="18" fill="#8BAF3A"/>
+            <circle class="leaf leaf2" cx="130" cy="125" r="18" fill="#7fa53d"/>
+            <circle class="leaf leaf3" cx="75" cy="95" r="16" fill="#6b972c"/>
+            <circle class="leaf leaf4" cx="125" cy="95" r="16" fill="#8BAF3A"/>
+            <circle class="leaf leaf5" cx="100" cy="80" r="20" fill="#56731b"/>
+        </svg>
+        <p class="preloader-text">Growing something big<span class="dots">...</span></p>
+    </div>
+
+    <header id="mainHeader">
+        <ul class="header-ul">
+            <div class="links">
+                <li>
+                    <a class="header-a" href="index.html" id="logoLink">
+                        <img class="logo" src="logo.png">
+                    </a>
+                </li>
+                <div class="nav-links-mobile" id="navLinksMobile">
+                    <li>
+                        <a class="header-a nav-link" href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="header-a nav-link" href="index.html#about">about</a>
+                    </li>
+                    <li>
+                        <a class="header-a nav-link active" href="projects.html">projects</a>
+                    </li>
+                    <li>
+                        <a class="header-a nav-link" href="index.html#contact">contact</a>
+                    </li>
+                    <li>
+                        <a class="header-a nav-link" href="index.html#skills">skills</a>
+                    </li>
+                </div>
+            </div>
+            <div class="buttons" id="buttonsMenu">
+                <button class="resume">
+                    <a class="button-a">
+                        Download Resume
+                    </a>
+                </button>
+                <button class="contact-button">
+                    <a class="button-a">
+                        Contact-me
+                    </a>
+                </button>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+        </ul>
+    </header> <!--header-end-here-->
+
+    <!-- page hero -->
+    <section class="page-hero">
+        <span class="project-tag">My Work</span>
+        <h1>All Projects</h1>
+        <p class="projects-intro">
+            Everything I've built so far, from small daily-practice apps to
+            full-scale sites — a running record of what I've been learning
+            and shipping on the MERN stack journey.
+        </p>
+    </section>
+
+    <section class="projects" id="all-projects">
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <div class="project-thumb">
+                <div class="project-thumb-fallback"><i class="fa-solid fa-code"></i></div>
+                <img src="project-portfolio.jpg" alt="Portfolio Website preview" loading="lazy" onerror="this.style.display='none'">
+                <span class="project-badge featured">Featured</span>
+            </div>
+            <div class="project-body">
+                <h3>Portfolio Website</h3>
+                <p>
+                    A fully responsive personal portfolio built from scratch to showcase
+                    my projects and skills, featuring smooth scroll animations, a
+                    scrollspy navbar, and a clean, recruiter-friendly layout across
+                    every screen size.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-badge">HTML</span>
+                    <span class="tech-badge">CSS</span>
+                    <span class="tech-badge">JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://chitrangna.netlify.app/" class="project-link live" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/chitrangna-dev/portfolio" class="project-link github" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-thumb">
+                <div class="project-thumb-fallback"><i class="fa-solid fa-robot"></i></div>
+                <img src="project-assistant-bot.jpg" alt="ABESIT Assistant Bot preview" loading="lazy" onerror="this.style.display='none'">
+                <span class="project-badge live"><i class="fa-solid fa-circle"></i> Live</span>
+            </div>
+            <div class="project-body">
+                <h3>ABESIT Assistant Bot</h3>
+                <p>
+                    A Python-based smart assistant that answers common student queries
+                    about schedules, faculty and campus resources instantly, cutting
+                    down repetitive manual support requests for the college community.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://t.me/abesittbot" class="project-link live" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-telegram"></i> Open in Telegram
+                    </a>
+                    <a href="https://github.com/chitrangna-dev" class="project-link github" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-thumb">
+                <div class="project-thumb-fallback"><i class="fa-solid fa-calculator"></i></div>
+                <img src="project-calculator.jpg" alt="Calculator App preview" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <div class="project-body">
+                <h3>Calculator App</h3>
+                <p>
+                    An interactive calculator with a clean, intuitive UI and reliable
+                    JavaScript logic that handles chained operations and edge cases
+                    smoothly for a frustration-free user experience.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">HTML</span>
+                    <span class="tech-badge">CSS</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://procompute.netlify.app/" class="project-link live" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/chitrangna-dev/calculator-" class="project-link github" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-thumb">
+                <div class="project-thumb-fallback"><i class="fa-solid fa-music"></i></div>
+                <img src="project-music-player.jpg" alt="Music Player preview" loading="lazy" onerror="this.style.display='none'">
+                <span class="project-badge live"><i class="fa-solid fa-circle"></i> Live</span>
+            </div>
+            <div class="project-body">
+                <h3>Music Player</h3>
+                <p>
+                    A simple, functional music player built with the native HTML5
+                    Audio API — play, pause, skip, seek, and control volume across
+                    a custom playlist, with a clean UI-driven playlist selector.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-badge">HTML</span>
+                    <span class="tech-badge">CSS</span>
+                    <span class="tech-badge">JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://music-player-eta-rosy.vercel.app/" class="project-link live" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/chitrangna-dev/music-player" class="project-link github" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            Naye project cards yahin isi pattern mein add karo:
+            (1) .project-thumb ke andar ek fallback icon + preview image
+            (2) .project-body mein title, description, tech-stack badges
+            (3) .project-links mein Live Demo aur GitHub button
+            Bas real live link aur GitHub repo link daal dena — layout,
+            animation aur hover states already sab .project-card class se
+            aa rahe hain, koi extra CSS nahi likhni padegi.
+        -->
+
+    </div>
+
+    <div class="view-all-wrap">
+        <a href="index.html" class="view-all-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h3>Chitrangna</h3>
+
+        <p>
+            Frontend Developer • Future Startup Founder • Lifelong Learner
+        </p>
+
+        <div class="footer-socials">
+
+            <a href="https://linkedin.com/in/chitrangna-885abb413" target="_blank" rel="noopener">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://github.com/chitrangna-dev" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="mailto:chitrangna@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Chitrangna. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- Scroll To Top Button -->
+
+<button id="topBtn">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+<script src="script.js"></script>
+
+</body>
+</html>
